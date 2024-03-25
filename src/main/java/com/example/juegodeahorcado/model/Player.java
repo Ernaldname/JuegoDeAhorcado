@@ -1,16 +1,21 @@
 package com.example.juegodeahorcado.model;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+public class Player {
 
-public class Player extends Application {
+    private int id;
 
-    public static void main(String[] args) {
-        launch(args);
+    private String palabraClave;
+
+    public Player(int id, String palabraClave){
+        this.id = id;
+        this.palabraClave = palabraClave;
     }
 
-    @Override
-    public void start(Stage primaryStage) {
+    public int getId() {return id; }
+    public void setId(int id) { this.id = id;}
 
-    }
+    public String getPalabraClave() {return palabraClave; }
+    public void setPalabraClave(String palabraClave) {this.palabraClave = palabraClave; }
+
+
 }

@@ -1,16 +1,26 @@
 package com.example.juegodeahorcado.controller;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import com.example.juegodeahorcado.model.Player;
+import com.example.juegodeahorcado.view.GameStage;
+import com.example.juegodeahorcado.view.WelcomeStage;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
-public class WelcomeController extends Application {
+import java.io.IOException;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class WelcomeController {
+    @FXML
+    private TextField campoDeTextoPalabraClave;
 
-    @Override
-    public void start(Stage primaryStage) {
+    @FXML
+
+    void onHandleButtonPlay(ActionEvent event) throws IOException {
+        String palabraClave = campoDeTextoPalabraClave.getText();
+
+        Player player = new Player(1, palabraClave);
+        GameStage.getInstance().getGameController().setPlayer(player);
+        WelcomeStage.deleteInstance();
 
     }
 }
