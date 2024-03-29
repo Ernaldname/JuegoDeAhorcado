@@ -18,8 +18,7 @@ public class WelcomeStage extends Stage {
         setTitle("Juego de ahorcado");
         getIcons().add(
                 new Image(
-                        String.valueOf(getClass().getResource(
-                                "/com/example/juegodeahorcado/images/verdugo.png"))));
+                        String.valueOf(getClass().getResource("/com/example/juegodeahorcado/images/verdugo.png"))));
         setResizable(false);
         setScene(scene);
         show();
