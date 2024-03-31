@@ -1,11 +1,11 @@
 package com.example.juegodeahorcado.view;
 
-import com.example.juegodeahorcado.controller.GameController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import com.example.juegodeahorcado.controller.GameController;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ public class GameStage extends Stage {
 
 
     public GameStage() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/juegodeahorcado/test-juegoahorcado-view.fxml")); // Carga el archivo que le indicamos en getResourse
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/juegodeahorcado/test-view.fxml")); // Carga el archivo que le indicamos en getResourse
         Parent root = loader.load(); // La variable root pasa a ser un objeto de tipo Parent (Nodo principal)
         gameController = loader.getController(); // Con este .getController asignamos la referencia del controlador de la logica de la interfaz para el FXML cargado
         Scene scene = new Scene(root); // Sirve para crear una nueva escena utilizando el nodo raiz "root" como contenido principal

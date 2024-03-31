@@ -1,9 +1,7 @@
 package com.example.juegodeahorcado.model;
 
 public class Player {
-
     private int id;
-
     private String palabraClave;
 
     public Player(int id, String palabraClave){

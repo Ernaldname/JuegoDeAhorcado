@@ -12,7 +12,7 @@ public class WelcomeStage extends Stage {
 
     public WelcomeStage () throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(
-                "/com/example/juegodeahorcado/welcomeJuegoAhorcado-view.fxml"));
+                "/com/example/juegodeahorcado/welcome-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         setTitle("Juego de ahorcado");
