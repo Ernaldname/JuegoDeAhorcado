@@ -12,9 +12,11 @@ public class Player {
     }
 
     public int getId() {return id; }
-    public void setId(int id) { this.id = id;}
 
     public String getPalabraClave() {return palabraClave; }
+
+    public void setId(int id) { this.id = id;}
+
     public void setPalabraClave(String palabraClave) {this.palabraClave = palabraClave; }
 
 
