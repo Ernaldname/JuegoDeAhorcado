@@ -14,7 +14,9 @@ public class GameController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private Label contadorDeVida, contadorDeAyuda;
+    private Label contadorDeAyuda;
+    @FXML
+    private Label contadorDeVida;
     @FXML
     private TextArea ingresoPalabraSecreta;
 
@@ -30,7 +32,6 @@ public class GameController {
     public void onHandleButtonRollTheDice(ActionEvent event) {
         if (diceImageView1 != null) {
             anchorPane.getChildren().remove(diceImageView1);
-
         }
         dice1 = new Dice();
 

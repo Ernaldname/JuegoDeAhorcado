@@ -4,7 +4,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Dice {
-
     private ImageView diceImage;
     private int errorCount;
 
@@ -16,8 +15,14 @@ public class Dice {
     public void updateHangmanImage(int contador) {
         String PATH = "/com/example/juegodeahorcado/images/dices/";
         this.errorCount = contador;
+
         // Carga la imagen correspondiente al contador actual
-        this.diceImage = new ImageView(new Image(getClass().getResource(PATH + "hangman" + errorCount + ".png").toExternalForm(), true));
+        this.diceImage =
+                new ImageView(
+                        new Image(String.valueOf(getClass().getResource(PATH + "dice1" + errorCount + ".png")))
+                        //new Image(String.valueOf(getClass().getResource(PATH + "dice" + errorCount + ".png")))
+                );
+
         this.diceImage.setFitWidth(64);
         this.diceImage.setFitHeight(64);
     }

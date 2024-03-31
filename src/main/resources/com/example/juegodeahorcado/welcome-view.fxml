@@ -42,9 +42,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="173.0" prefWidth="600.0" style="-fx-background-color: black;" GridPane.rowIndex="1">
          <children>
-            <Button layoutX="14.0" layoutY="34.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="INSTRUCCIONES" />
-            <Button layoutX="14.0" layoutY="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: white;" text="HISTORIA DEL JUEGO" />
-            <Label alignment="CENTER" layoutX="142.0" layoutY="116.0" prefHeight="32.0" prefWidth="317.0" style="-fx-background-color: white;" text="INGRESA LA PALABRA SECRETA:">
+            <Label alignment="CENTER" layoutX="142.0" layoutY="81.0" prefHeight="32.0" prefWidth="317.0" style="-fx-background-color: black;" text="INGRESA LA PALABRA SECRETA:" textFill="WHITE">
                <font>
                   <Font name="Consolas" size="21.0" />
                </font>
@@ -53,7 +51,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.rowIndex="2">
          <children>
-            <TextField fx:id="campoDeTextoPalabraClave" alignment="CENTER" cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="192.0" layoutY="14.0" prefHeight="32.0" prefWidth="218.0" style="-fx-background-color: WHITE;">
+            <TextField fx:id="campoDeTextoPalabraClave" alignment="CENTER" cache="true" cacheHint="SCALE" depthTest="ENABLE" layoutX="193.0" layoutY="7.0" prefHeight="32.0" prefWidth="218.0" style="-fx-background-color: WHITE;">
                <padding>
                   <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                </padding>
@@ -70,7 +68,7 @@
                   <Blend />
                </effect>
             </TextField>
-            <Button layoutX="250.0" layoutY="55.0" mnemonicParsing="false" onAction="#onHandleButtonPlay" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: RED;" text="JUGAR" textFill="WHITE">
+            <Button layoutX="251.0" layoutY="78.0" mnemonicParsing="false" onAction="#onHandleButtonPlay" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: RED;" text="JUGAR" textFill="WHITE">
                <font>
                   <Font name="Chiller" size="22.0" />
                </font>

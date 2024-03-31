@@ -29,7 +29,7 @@ public class GameStage extends Stage {
         show(); // Permite visualizar e interactuar con la ventana principal de la aplicacion
     }
 
-    // Utilizamos el patron Singleton para la clase GameStage que parece ser una clase que representa una ventana o escenario en una aplicacion de juego (Posiblemente en JavaFX)
+    // Utilizamos el patron Singleton para la clase GameStage
     public GameController getGameController(){ return gameController; }
 
     public static GameStage getInstance() throws IOException {

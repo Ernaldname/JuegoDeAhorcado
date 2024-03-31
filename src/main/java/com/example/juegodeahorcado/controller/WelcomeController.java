@@ -31,7 +31,7 @@ public class WelcomeController {
     }
 
     private boolean validarPalabraClave(String palabraClave) {
-        // Utilizamos una expresión regular para verificar si solo se han utilizado palabras
         return Pattern.matches("\\b[a-zA-Z]+\\b", palabraClave);
     }
+
 }
