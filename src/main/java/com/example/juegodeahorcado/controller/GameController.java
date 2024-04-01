@@ -3,7 +3,7 @@ package com.example.juegodeahorcado.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import com.example.juegodeahorcado.model.Dice;
@@ -11,14 +11,18 @@ import com.example.juegodeahorcado.model.Player;
 
 public class GameController {
 
+
     @FXML
     private AnchorPane anchorPane;
+
     @FXML
     private Label contadorDeAyuda;
+
     @FXML
     private Label contadorDeVida;
+
     @FXML
-    private TextArea ingresoPalabraSecreta;
+    private TextField ingresoLetraSecreta;
 
 
     private Player player;
