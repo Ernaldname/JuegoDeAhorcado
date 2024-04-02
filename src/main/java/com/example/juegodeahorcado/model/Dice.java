@@ -28,5 +28,6 @@ public class Dice {
     public ImageView getDiceImage() { return diceImage; }
 
     public int getNumDice() { return errorCount; }
+
 }
 
