@@ -34,15 +34,16 @@ public class GameController {
 
     @FXML
     public void onHandleButtonRollTheDice(ActionEvent event) {
+        // Elimina una imgagen si ya hay una en el anchor pane -> por lo tanto antes de mostrar la sgte primero se borra la anterior si hay anterior
         if (diceImageView1 != null) {
             anchorPane.getChildren().remove(diceImageView1);
         }
+
+        // Se crea la instancia de la clase dice para obtener la imgagen del ahorcado
         dice1 = new Dice();
-
+        // Se crea el objeto y se llama a la accion que ejecuta en el modelo
         diceImageView1 = dice1.getDiceImage();
-        diceImageView1.setX(76);
-        diceImageView1.setY(50);
-
+        // Se agrega a la interfaz grafica
         anchorPane.getChildren().addAll(diceImageView1);
     }
 
