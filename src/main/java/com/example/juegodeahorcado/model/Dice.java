@@ -5,7 +5,6 @@ import javafx.scene.image.ImageView;
 
 public class Dice {
     private ImageView diceImage;
-    private int errorCount;
 
     public Dice() {
         updateHangmanImage(6); // Inicias con el máximo de intentos permitidos
@@ -14,9 +13,8 @@ public class Dice {
     // Método para actualizar la imagen basada en el contador de errores
     public void updateHangmanImage(int contador) {
         String PATH = "/com/example/juegodeahorcado/images/dices/";
-        this.errorCount = contador;
         // Modificando en esta zona la logica del contador podremos obeter las vidas del usuario que se accionaran cada que se equivoque en la letra
-        // contador = 6;
+        contador = 6;
 
         // Carga la imagen correspondiente al contador actual
         this.diceImage =
@@ -29,7 +27,6 @@ public class Dice {
 
     public ImageView getDiceImage() { return diceImage; }
 
-    public int getNumDice() { return errorCount; }
 
 }
 
