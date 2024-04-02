@@ -47,6 +47,22 @@ public class GameController {
         anchorPane.getChildren().addAll(diceImageView1);
     }
 
+
+    // de aqui para abajo siguen los otros componentes, como el boton de ayuda
+    @FXML
+    public void onHandleButtonRollTheAyuda(ActionEvent event) {
+
+
+
+        // Se crea la instancia de la clase dice para obtener la imgagen del ahorcado
+        dice1 = new Dice();
+        // Se crea el objeto y se llama a la accion que ejecuta en el modelo
+        diceImageView1 = dice1.getDiceImage();
+        // Se agrega a la interfaz grafica
+        anchorPane.getChildren().addAll(diceImageView1);
+    }
+
+
     public void setPlayer(Player player) {
         this.player = player;
     }
