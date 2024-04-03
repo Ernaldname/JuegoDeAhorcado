@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import com.example.juegodeahorcado.model.Dice;
 import com.example.juegodeahorcado.model.Player;
+import javax.swing.JOptionPane;
 
 public class GameController {
     @FXML
@@ -44,20 +45,16 @@ public class GameController {
         diceImageView1 = dice1.getDiceImage();
         // Se agrega a la interfaz grafica
         anchorPane.getChildren().addAll(diceImageView1);
-
         String palabraClave = campoDeTextoPalabraClave.getText();
         char[] arregloLetrasClave = palabraClave.toCharArray();
-
         char letraABuscar = letraClave;
-        letraABuscar = Character.toLowerCase(letraABuscar); // Hace que no importe si esta en minuscula o mayuscula la letra
+        letraABuscar = Character.toLowerCase(letraABuscar); // Hace que no importe si esta en minuscula o mayuscula la letra ingresada
         boolean letraEncontrada = false;
-
         for (char caracter : arregloLetrasClave) {
             if (caracter == letraABuscar) {
                 letraEncontrada = true;
-
+                JOptionPane.showMessageDialog(null,"Ganaste rey");
                 // Esta logica es la que mostrara una letra en pantalla
-
                 break;
             }
         }
@@ -67,6 +64,11 @@ public class GameController {
     // de aqui para abajo siguen los otros componentes, como el boton de ayuda
     @FXML
     public void onHandleButtonRollTheAyuda(ActionEvent event) {
+        // Nos servira para ver el mensaje de ayuda
+        // Por cada que se aprete el boton aparece el cuadro de dialogo
+        JOptionPane.showMessageDialog(null,"Pista 1");
+        JOptionPane.showMessageDialog(null,"Pista 2");
+        JOptionPane.showMessageDialog(null,"Pista 3");
 
     }
 

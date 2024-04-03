@@ -1,6 +1,7 @@
 module com.example.juegodeahorcado {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens com.example.juegodeahorcado to javafx.fxml;
