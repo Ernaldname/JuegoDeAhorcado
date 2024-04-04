@@ -3,6 +3,7 @@ package com.example.juegodeahorcado.controller;
 import com.example.juegodeahorcado.model.Ayuda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -39,22 +40,28 @@ public class GameController {
         if (diceImageView1 != null) {
             anchorPane.getChildren().remove(diceImageView1);
         }
-        // Se crea la instancia de la clase dice para obtener la imgagen del ahorcado
+        // Se crea la instancia de la clase "dice" con el fin de obtener la descripcion y la imgagen del ahorcado
         dice1 = new Dice();
         // Se crea el objeto y se llama a la accion que ejecuta en el modelo
         diceImageView1 = dice1.getDiceImage();
         // Se agrega a la interfaz grafica
         anchorPane.getChildren().addAll(diceImageView1);
+
+        // Creamos una variable llamada "palabraClave" de tipo String y le asignamos lo que se ingrese en el campo de texto de la palabra clave
         String palabraClave = campoDeTextoPalabraClave.getText();
+        // Realizamos un arreglo tipo char de la palabraClave para que sea recorrido
         char[] arregloLetrasClave = palabraClave.toCharArray();
         char letraABuscar = letraClave;
-        letraABuscar = Character.toLowerCase(letraABuscar); // Hace que no importe si esta en minuscula o mayuscula la letra ingresada
+        //letraABuscar = Character.toLowerCase(letraABuscar); // Hace que no importe si esta en minuscula o mayuscula la letra ingresada
+        // Creamos un boleano el cual se inicia en falso ya que no habria letra encontrada en el inicio del juego
         boolean letraEncontrada = false;
+        // Recorremos el "arregloLetrasClave con el fin de encontrar en el arreglo de letras con un iterador si la p
         for (char caracter : arregloLetrasClave) {
             if (caracter == letraABuscar) {
                 letraEncontrada = true;
-                JOptionPane.showMessageDialog(null,"Ganaste rey");
-                // Esta logica es la que mostrara una letra en pantalla
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("Ganaste rey");
+                // Esta logica es la que mostrara una letra en pantalla que funciona con la clase -> AYUDA
                 break;
             }
         }
