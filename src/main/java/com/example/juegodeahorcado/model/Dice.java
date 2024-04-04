@@ -9,15 +9,10 @@ public class Dice {
     public Dice() {
         updateHangmanImage(6); // Inicias con el máximo de intentos permitidos
     }
-
-    // Método para actualizar la imagen basada en el contador de errores
-    public void updateHangmanImage(int contador) {
+    public void updateHangmanImage(int contador) {// Método para actualizar la imagen basada en el contador de errores
         String PATH = "/com/example/juegodeahorcado/images/dices/";
-        // Modificando en esta zona la logica del contador podremos obeter las vidas del usuario que se accionaran cada que se equivoque en la letra
-        contador = 6;
-
-        // Carga la imagen correspondiente al contador actual
-        this.diceImage =
+        contador = 1;// Modificando en esta zona la logica del contador podremos obeter las vidas del usuario que se accionaran cada que se equivoque en la letra
+        this.diceImage = // Carga la imagen correspondiente al contador actual
                 new ImageView(
                         new Image(String.valueOf(getClass().getResource(PATH + "dice" + contador + ".png")))
                 );
@@ -26,7 +21,5 @@ public class Dice {
     }
 
     public ImageView getDiceImage() { return diceImage; }
-
-
 }
 
