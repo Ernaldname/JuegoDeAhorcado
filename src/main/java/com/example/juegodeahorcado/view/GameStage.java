@@ -12,8 +12,6 @@ import java.io.IOException;
 
 public class GameStage extends Stage {
     private GameController gameController;
-
-
     public GameStage() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/juegodeahorcado/test-view.fxml")); // Carga el archivo que le indicamos en getResourse
         Parent root = loader.load(); // La variable root pasa a ser un objeto de tipo Parent (Nodo principal)
@@ -37,12 +35,10 @@ public class GameStage extends Stage {
         // exista una unica intancia de GameStage y la asigna a GameStage
         //
     }
-
     public static void deleteInstance(){
         GameStageHolder.INSTANCE.close();
         GameStageHolder.INSTANCE = null;
     }
-
     private static class GameStageHolder {
         private static GameStage INSTANCE;
     }
