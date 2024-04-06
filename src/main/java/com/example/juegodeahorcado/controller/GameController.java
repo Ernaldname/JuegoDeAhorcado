@@ -1,67 +1,88 @@
 package com.example.juegodeahorcado.controller;
 
-import com.example.juegodeahorcado.model.Ayuda;
+import com.example.juegodeahorcado.model.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import com.example.juegodeahorcado.model.Dice;
-import com.example.juegodeahorcado.model.Player;
-import javax.swing.JOptionPane;
-import java.awt.*;
 
 public class GameController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private TextField campoDeTextoPalabraClave;
-    @FXML
     private TextField campoDeTextoLetraClave;
     @FXML
-    private TextField ingresoLetraSecreta;
+    private TextField muestraLetras;
+    public void mostrarResultado(String resultado) {
+        muestraLetras.setText(resultado);
+    }
 
     private Player player;
     private Dice dice1;
     private ImageView diceImageView1;
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     @FXML
     public void onHandleButtonRollTheDice(ActionEvent event) {
 
-        if (diceImageView1 != null) {anchorPane.getChildren().remove(diceImageView1);}// Elimina una imgagen si ya hay una en el anchor pane -> por lo tanto antes de mostrar la sgte primero se borra la anterior si hay anterior
-        dice1 = new Dice();// Se crea la instancia de la clase "dice" con el fin de obtener la descripcion y la imgagen del ahorcado
-        diceImageView1 = dice1.getDiceImage(); // Se crea el objeto y se llama a la accion que ejecuta en el modelo
-        anchorPane.getChildren().addAll(diceImageView1);// Se agrega a la interfaz grafica
+        if (diceImageView1 != null) {
+            anchorPane.getChildren().remove(diceImageView1);
+        }
+        dice1 = new Dice();
+        diceImageView1 = dice1.getDiceImage();
+        anchorPane.getChildren().addAll(diceImageView1);
 
-        // Asegúrate de que el usuario haya ingresado al menos un carácter
-        String letraSecretaText = campoDeTextoLetraClave.getText(); // Asumiendo que ingresoLetraSecreta es tu campo de texto
-        char[] arregloDeLetricas = letraSecretaText.toCharArray();
+        if (player != null) {
+            // Le asignamos el metodo generado en el modelo para obtener la palabraClave
+            String palabraClave = player.getPalabraClave();
+            // Traemos el texto gracias al metodo getText y lo asignamos a una variable que creamos con el nombre "letraSecretaText"
+            String letraSecretaText = campoDeTextoLetraClave.getText();
 
-        String texto = campoDeTextoPalabraClave.getText(); // Extraemos el texto de la palabra secreta
-        char[] arregloDeChars = texto.toCharArray();
+            // Los resultados de letras los convertimos en arreglos de tipo char para que sean recorridos y comparados
 
-        // Recorre el arreglo de la palabra ingresada al inicio
-        for (int i = 0; i < arregloDeChars.length; i++) {
-            char caracter = arregloDeChars[i];
-            for (char letra : arregloDeLetricas) {
-                if (caracter == letra){
-                    System.out.println("Hola rey");
+            char[] arregloDeLetra = letraSecretaText.toCharArray();
+            char[] arregloDeLaPalabra = palabraClave.toCharArray();
+
+            for (char caracter : arregloDeLaPalabra) {
+                boolean letraEncontrada = false;
+
+                for (char letra : arregloDeLetra) {
+                    if (caracter == letra) {
+                        letraEncontrada = true;
+                        break; // Salir del bucle interno si se encuentra la letra
+                    }
+
+                }
+                if (letraEncontrada) {
+                    System.out.println("La letra '" + caracter + "' está en el arreglo.");
+
+                } else {
+                    System.out.println("La letra '" + caracter + "' no está en el arreglo.");
+                    if (diceImageView1 != null) {
+                        anchorPane.getChildren().remove(diceImageView1);
+                    }
+                    dice1 = new Dice();
+                    diceImageView1 = dice1.getDiceImage();
+                    anchorPane.getChildren().addAll(diceImageView1);
                 }
             }
+
+
         }
+    }
+
+    public void actualizarLetraIngresada(char letra) {
+        String textoActual = muestraLetras.getText();
+        muestraLetras.setText(textoActual + letra);
     }
 
 
     @FXML
     public void onHandleButtonRollTheAyuda(ActionEvent event) {
-
-
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 }

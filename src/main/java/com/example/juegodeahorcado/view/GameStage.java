@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class GameStage extends Stage {
     private GameController gameController;
+
     public GameStage() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/juegodeahorcado/test-view.fxml")); // Carga el archivo que le indicamos en getResourse
         Parent root = loader.load(); // La variable root pasa a ser un objeto de tipo Parent (Nodo principal)
@@ -27,20 +28,28 @@ public class GameStage extends Stage {
         show(); // Permite visualizar e interactuar con la ventana principal de la aplicacion
     }
 
-    // Utilizamos el patron Singleton para la clase GameStage
+    // Utilizamos el patron Singleton para la clase GameStage que parece ser una clase que representa una ventana o escenario en una aplicacion de juego (Posiblemente en JavaFX)
     public GameController getGameController(){ return gameController; }
 
     public static GameStage getInstance() throws IOException {
-       return GameStageHolder.INSTANCE = new GameStage(); // Utiliza un patron singleton con el fin de garantizar que
+        return GameStageHolder.INSTANCE = new GameStage(); // Utiliza un patron singleton con el fin de garantizar que
         // exista una unica intancia de GameStage y la asigna a GameStage
         //
     }
+
     public static void deleteInstance(){
         GameStageHolder.INSTANCE.close();
         GameStageHolder.INSTANCE = null;
     }
+
     private static class GameStageHolder {
         private static GameStage INSTANCE;
     }
 
 }
+
+
+
+
+
+
