@@ -11,6 +11,8 @@ import java.io.IOException;
 
 
 public class GameStage extends Stage {
+
+    // Utilizamos una instacia de la clase GameController para agregar la referencia al controlador con el fin de realizar acciones especificas como actualizar la interfaz
     private GameController gameController;
 
     public GameStage() throws IOException {
@@ -28,7 +30,7 @@ public class GameStage extends Stage {
         show(); // Permite visualizar e interactuar con la ventana principal de la aplicacion
     }
 
-    // Utilizamos el patron Singleton para la clase GameStage que parece ser una clase que representa una ventana o escenario en una aplicacion de juego (Posiblemente en JavaFX)
+    //
     public GameController getGameController(){ return gameController; }
 
     public static GameStage getInstance() throws IOException {

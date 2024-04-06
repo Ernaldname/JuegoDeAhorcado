@@ -13,12 +13,6 @@ public class GameController {
     private AnchorPane anchorPane;
     @FXML
     private TextField campoDeTextoLetraClave;
-    @FXML
-    private TextField muestraLetras;
-    public void mostrarResultado(String resultado) {
-        muestraLetras.setText(resultado);
-    }
-
     private Player player;
     private Dice dice1;
     private ImageView diceImageView1;
@@ -71,14 +65,7 @@ public class GameController {
                     anchorPane.getChildren().addAll(diceImageView1);
                 }
             }
-
-
         }
-    }
-
-    public void actualizarLetraIngresada(char letra) {
-        String textoActual = muestraLetras.getText();
-        muestraLetras.setText(textoActual + letra);
     }
 
 
