@@ -6,7 +6,6 @@ import javafx.scene.image.ImageView;
 
 public class Dice {
     private int contadorErrores;
-
     private int maxIntentos = 6; // Contador máximo de intentos permitidos
     private int intentoActual = 0; // Número de intento actual
 
@@ -17,9 +16,10 @@ public class Dice {
         contadorErrores = 6;
         updateHangmanImage(); // Inicias con el máximo de intentos permitidos
     }
-    public void decrementarContador() {
+    public Object decrementarContador() {
         contadorErrores++;
         updateHangmanImage();
+        return null;
     }
     public void updateHangmanImage() {// Método para actualizar la imagen basada en el contador de errores
         String PATH = "/com/example/juegodeahorcado/images/dices/";
@@ -36,11 +36,8 @@ public class Dice {
         this.diceImage.setFitWidth(300);
         this.diceImage.setFitHeight(330);
     }
-
     public GameController getGameController(){ return gameController; }
-
     public ImageView getDiceImage() {
         return diceImage;
     }
-
 }

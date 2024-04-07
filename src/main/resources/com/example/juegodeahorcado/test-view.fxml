@@ -26,7 +26,7 @@
             <Label alignment="CENTER" layoutX="64.0" layoutY="86.0" prefHeight="32.0" prefWidth="155.0" text="AYUDAS DISPONIBLES" />
             <Label fx:id="contadorDeAyuda" alignment="CENTER" layoutX="227.0" layoutY="94.0" prefHeight="17.0" prefWidth="17.0" text="3" />
             <TextField fx:id="campoDeTextoLetraClave" layoutX="122.0" layoutY="183.0" prefHeight="25.0" prefWidth="39.0" />
-            <Label layoutX="49.0" layoutY="136.0" prefHeight="32.0" prefWidth="186.0" />
+            <Label fx:id="muestraLetras" layoutX="49.0" layoutY="136.0" prefHeight="32.0" prefWidth="186.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPane" prefHeight="314.0" prefWidth="313.0" GridPane.columnIndex="1" />

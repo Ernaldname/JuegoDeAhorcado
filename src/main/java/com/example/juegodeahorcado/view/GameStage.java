@@ -9,7 +9,6 @@ import com.example.juegodeahorcado.controller.GameController;
 
 import java.io.IOException;
 
-
 public class GameStage extends Stage {
 
     // Utilizamos una instacia de la clase GameController para agregar la referencia al controlador con el fin de realizar acciones especificas como actualizar la interfaz
@@ -29,25 +28,20 @@ public class GameStage extends Stage {
         setScene(scene); // Mostramos la escena
         show(); // Permite visualizar e interactuar con la ventana principal de la aplicacion
     }
-
     //
     public GameController getGameController(){ return gameController; }
-
     public static GameStage getInstance() throws IOException {
         return GameStageHolder.INSTANCE = new GameStage(); // Utiliza un patron singleton con el fin de garantizar que
         // exista una unica intancia de GameStage y la asigna a GameStage
         //
     }
-
     public static void deleteInstance(){
         GameStageHolder.INSTANCE.close();
         GameStageHolder.INSTANCE = null;
     }
-
     private static class GameStageHolder {
         private static GameStage INSTANCE;
     }
-
 }
 
 

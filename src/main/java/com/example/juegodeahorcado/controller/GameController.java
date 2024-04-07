@@ -22,6 +22,8 @@ public class GameController {
     private Dice dice1;
     private ImageView diceImageView1;
 
+    private int numero1 = 0;
+
     public void setPlayer(Player player) {
         this.player = player;
     }
@@ -44,8 +46,10 @@ public class GameController {
             // Traemos el texto gracias al metodo getText y lo asignamos a una variable que creamos con el nombre "letraSecretaText"
             String letraSecretaText = campoDeTextoLetraClave.getText();
 
+            // Este es para revisar si la letra ingresada es letra y no otro simbolo
+
             if (validarPalabraClave(letraSecretaText)) {
-                System.out.println("");
+                // Este if debo refactorizarlo ya que no se usa, esto es para unicamente revisar si la palabra ingresada es invalida
             } else {
                 String mensaje = "Por favor, ingresa únicamente palabras en el campo de texto.";
                 AlertBox.showMessage("Error", "Palabra Clave Inválida", mensaje);
@@ -61,15 +65,15 @@ public class GameController {
                         letraEncontrada = true;
                         break; // Salir del bucle interno si se encuentra la letra
                     }
-                }
+                  }
+
                 if (letraEncontrada) {
-                    String mensaje = "Por favor, ingresa únicamente palabras en el campo de texto.";
-                    AlertBox.showMessage("Error", "Palabra Clave Inválida", mensaje);
+                    // Este texto es para cuando se encuentre la letra
                 }
                 else {
-                   {System.out.println("No esta en el arreglo: ");
-                       dice.decrementarContador();
-                       break;}
+                    // Este texto es para cuando no se encuentra la letra
+                    dice.decrementarContador();
+                    break;
                 }
             }
         }
