@@ -72,6 +72,7 @@ public class GameController {
                 }
                 else {
                     // Este texto es para cuando no se encuentra la letra
+                    // Revisar que hace esta vuelta y como sacarle el jugo
                     dice.decrementarContador();
                     break;
                 }
