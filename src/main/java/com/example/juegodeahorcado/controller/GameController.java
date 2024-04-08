@@ -22,7 +22,6 @@ public class GameController {
     private Dice dice1;
     private ImageView diceImageView1;
 
-    private int numero1 = 0;
 
     public void setPlayer(Player player) {
         this.player = player;
@@ -69,10 +68,12 @@ public class GameController {
 
                 if (letraEncontrada) {
                     // Este texto es para cuando se encuentre la letra
+                    System.out.println("La letra esta dentro de la palabra");
                 }
                 else {
                     // Este texto es para cuando no se encuentra la letra
                     // Revisar que hace esta vuelta y como sacarle el jugo
+                    System.out.println("La letra no esta dentro de la palabra");
                     dice.decrementarContador();
                     break;
                 }
@@ -84,5 +85,7 @@ public class GameController {
     }
     @FXML
     public void onHandleButtonRollTheAyuda(ActionEvent event) {
+        // Al presionar se resta 1 por cada intento
+        System.out.println("Esta es la impresion del boton Ayuda");
     }
 }
