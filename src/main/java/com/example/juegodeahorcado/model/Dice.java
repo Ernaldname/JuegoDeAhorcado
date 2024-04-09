@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 public class Dice {
     private int contadorErrores;
     private int maxIntentos = 6; // Contador máximo de intentos permitidos
-    private int intentoActual = 5; // Número de intento actual
+    private int intentoActual = 4; // Número de intento actual
 
     private GameController gameController;
     private ImageView diceImage;
